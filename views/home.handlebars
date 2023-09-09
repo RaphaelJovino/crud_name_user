@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Nomes</title>
+  <!-- Adicione os links para os estilos do Bootstrap e qualquer outro CSS personalizado aqui -->
+  <link rel="stylesheet" href="link-para-o-bootstrap.css">
+  <style>
+    /* Adicione estilos personalizados aqui, se necessário */
+    .container {
+      max-width: 800px;
+    }
+    .action-buttons {
+      display: flex;
+      align-items: center;
+    }
+    .action-buttons button {
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-6">
+        <h3 class="mb-3">Cadastrar</h3>
+        <a href="/cadastro" class="btn btn-primary">Novo</a>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-12">
+        <h3>Lista de nomes cadastrados:</h3>
+        <ul class="list-group">
+          {{#each usuarios}}
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{this.nome}}
+            <div class="action-buttons">
+              <form action="/deletar/{{id}}" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn btn-danger">Deletar</button>
+              </form>
+              <form action="/pageAtualizar/{{id}}" method="get">
+                <a href="/pageAtualizar/{{id}}" class="btn btn-info">Editar</a>
+              </form>
+            </div>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Adicione scripts, se necessário -->
+</body>
+</html>

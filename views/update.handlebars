@@ -1,0 +1,10 @@
+<div class="mt-4 col-8">
+  <h3>Editar nome:</h3>
+  {{#each usuarios}}
+  <form action="/updateId" method="post"> 
+    <input type="hidden" name="id" value="{{this.id}}">
+    <input type="text" name="nome" placeholder="Nome" class="form-control form-control-lg" value="{{this.nome}}">
+    <button class="btn btn-primary mb-2 mt-4" type="submit">Editar</button>
+  </form>
+  {{/each}}
+</div>

@@ -1,0 +1,8 @@
+<div class=" mt-4 col-8">
+    <h3>Adicione novo nome: </h3>
+    {{usuarios}}
+    <form action="/add" method="post">
+    <input type="text" name="nome" id="" placeholder="Nome" class="form-control form-control-lg ">
+    <button class="btn btn-primary mb-2 mt-4" type="submit" value="{{usuarios.nome}}">Cadastrar</button>
+    </form>
+</div>
